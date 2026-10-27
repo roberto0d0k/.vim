@@ -34,10 +34,18 @@ filetype plugin indent on    " required
 
 set relativenumber
 
-" Set Solarized color
+" Color scheme: wildcharm (built into Vim 9.1), cool and high contrast on a black background.
+" The autocmd drops the scheme's own background so the terminal's black shows through.
 syntax enable
 set background=dark
-colorscheme solarized
+augroup black_bg
+  autocmd!
+  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+        \ | highlight NonText ctermbg=NONE guibg=NONE
+        \ | highlight LineNr ctermbg=NONE guibg=NONE
+        \ | highlight SignColumn ctermbg=NONE guibg=NONE
+augroup END
+colorscheme wildcharm
 
 "  NERD COMMENTER """"""""""""""""""""""""""""""""""
 " Usage <leader>cc to comment
@@ -54,7 +62,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " Light line """""""""""""""""""""""""""""""""""""""
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
