@@ -10,14 +10,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'preservim/nerdcommenter'
 Plugin 'preservim/nerdtree'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
@@ -46,18 +41,6 @@ augroup black_bg
         \ | highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
 colorscheme wildcharm
-
-"  NERD COMMENTER """"""""""""""""""""""""""""""""""
-" Usage <leader>cc to comment
-"
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
 
 " Light line """""""""""""""""""""""""""""""""""""""
 set laststatus=2
