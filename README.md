@@ -29,12 +29,15 @@ While in directory tree:
 * `m` to open filesystem menu   
 * `?` to open help menu    
 
+## Color scheme ##
+[wildcharm](https://github.com/vim/colorschemes), built into Vim 9.1+: a cool, high-contrast dark theme. The vimrc clears its background so the terminal's black shows through. Lightline uses `wombat`.
+
 ## Quick install ##
 1. Remove vimrc from home directory `rm ~/.vimrc`    
 2. Clone this repo `git clone https://github.com/robertoodogherty/.vim.git`   
 3. Create link for vimrc to home directory `ln -s ~/.vim/vimrc ~/.vimrc`   
 4. Clone Vundle into this repo `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`   
-5. Open vim and run `:PluginInstall`   
+5. Open vim (9.1+ for wildcharm) and run `:PluginInstall`   
 
 ### Note for OSX Users
 If you're on OSX ensure you are using mvim. You can look at how we do this in in the config [repo](https://github.com/robertoodogherty/config) alias.sh file    
