@@ -32,6 +32,8 @@ Useful commands:
 
 Notes:
 * Go: run Vim inside a Go module (a folder with `go.mod`, or below one). The first time you open a `.go` file, coc-go offers to install gopls; say yes (needs Go installed).
+* `definition provider not found for current buffer` means no language server is attached to the file, usually because it was installed while vim was open. Run `:CocRestart`. If it persists, check `:CocInfo`.
+* The first jump after opening vim can take a second or two while gopls loads the package.
 * C/C++: clangd needs a `compile_commands.json` in the project root to know your include paths. CMake writes one with `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`.
 
 ### Easy Motion ###
@@ -61,9 +63,12 @@ While in directory tree:
 3. Create link for vimrc to home directory `ln -s ~/.vim/vimrc ~/.vimrc`   
 4. Clone Vundle into this repo `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`   
 5. Install Node.js, which coc.nvim needs: `brew install node`   
+   * `zsh: command not found: brew` on Apple Silicon usually means Homebrew is installed but not on your PATH. Fix with `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile` and open a new terminal.   
 6. Clone coc.nvim's prebuilt `release` branch (Vundle can't pick a branch, so it's `pinned` in the vimrc): `git clone --branch release --depth 1 https://github.com/neoclide/coc.nvim.git ~/.vim/bundle/coc.nvim`   
 7. Open vim (9.1+ for wildcharm and coc.nvim) and run `:PluginInstall`   
-8. Restart vim; coc installs `coc-go` and `coc-clangd` on its own   
+8. Restart vim; coc installs `coc-go` and `coc-clangd` on its own (wait for it to finish)   
+9. Go only: open any `.go` file; coc-go offers to install gopls, say yes (needs Go). Then run `:CocRestart` (or reopen vim) so the open buffer connects to gopls   
+10. Test it: put the cursor on a function call and press `\d`; the definition opens in a new tab   
 
 To update coc.nvim later: `git -C ~/.vim/bundle/coc.nvim pull` (`:PluginUpdate` skips it because it's pinned).   
 
