@@ -17,13 +17,14 @@ IDE-style code navigation through language servers: jump to definitions (in a ne
 Set up for Go (`coc-go` → gopls) and C/C++ (`coc-clangd` → clangd); both extensions install themselves on first start.
 
 How to use (cursor on a function, type or variable):
-* `<leader>d` jump to its definition in a **new tab** (`<leader>` is `\`), then `gt` / `gT` to switch tabs
-* `gd` jump to its definition in the current window, `Ctrl-o` to jump back
+* `\d` jump to its definition in a **new tab**
 * `gr` list every place it's used (Enter on a line to open it)
 * `K` show its type and doc comment
-* `<leader>rn` rename it across the project
-* `[g` / `]g` previous / next error or warning
-* In insert mode, the completion menu: `Tab` / `Shift-Tab` to move, `Ctrl-y` to accept
+
+Autocomplete (insert mode, while the suggestion menu is open):
+* `Tab` accept the highlighted suggestion (the first one is highlighted by default)
+* `Shift-Tab` move down to the next suggestion
+* With no menu open, both keys work as normal
 
 Useful commands:
 * `:CocList extensions` see installed extensions

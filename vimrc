@@ -72,6 +72,6 @@ nmap <leader>rn <Plug>(coc-rename)
 " Jump between errors and warnings
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" Completion menu: Tab / Shift-Tab to move, Ctrl-y to accept (Enter is left to auto-pairs)
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" Completion menu: Tab accepts, Shift-Tab moves down (Enter is left to auto-pairs)
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+inoremap <silent><expr> <S-Tab> coc#pum#visible() ? coc#pum#next(1) : "\<S-Tab>"
